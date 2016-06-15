@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="public\app\app.component.ts" />
+    <TypeScriptCompile Include="public\app\dashboard.component.ts" />
+    <TypeScriptCompile Include="public\app\heroes.component.ts" />
     <TypeScriptCompile Include="public\app\hero-detail.component.ts" />
     <TypeScriptCompile Include="public\app\hero.service.ts" />
     <TypeScriptCompile Include="public\app\hero.ts" />
