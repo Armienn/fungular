@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var hero_service_1 = require('./hero.service');
+var hero_detail_component_1 = require('./hero-detail.component');
 var heroes_component_1 = require('./heroes.component');
 var dashboard_component_1 = require('./dashboard.component');
 var AppComponent = (function () {
@@ -21,6 +22,7 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             template: "\n\t<h1>{{title}}</h1>\n\t<nav>\n\t\t<a [routerLink]=\"['Dashboard']\">Dashboard</a>\n\t\t<a [routerLink]=\"['Heroes']\">Heroes</a>\n\t</nav>\n\t<router-outlet></router-outlet>\n",
+            styleUrls: ['app/app.component.css'],
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [
                 router_deprecated_1.ROUTER_PROVIDERS,
@@ -38,6 +40,11 @@ var AppComponent = (function () {
                 name: 'Dashboard',
                 component: dashboard_component_1.DashboardComponent,
                 useAsDefault: true
+            },
+            {
+                path: '/detail/:id',
+                name: 'HeroDetail',
+                component: hero_detail_component_1.HeroDetailComponent
             }
         ]), 
         __metadata('design:paramtypes', [])

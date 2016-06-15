@@ -13,6 +13,9 @@ var mock_heroes_1 = require('./mock-heroes');
 var HeroService = (function () {
     function HeroService() {
     }
+    HeroService.prototype.getHero = function (id) {
+        return this.getHeroes().then(function (heroes) { return heroes.filter(function (hero) { return hero.id === id; })[0]; });
+    };
     HeroService.prototype.getHeroes = function () {
         return Promise.resolve(mock_heroes_1.HEROES);
     };

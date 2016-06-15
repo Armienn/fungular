@@ -2,6 +2,7 @@
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
 import { HeroService } from './hero.service';
+import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesComponent } from './heroes.component';
 import { DashboardComponent } from './dashboard.component';
 
@@ -15,6 +16,7 @@ import { DashboardComponent } from './dashboard.component';
 	</nav>
 	<router-outlet></router-outlet>
 `,
+	styleUrls: ['app/app.component.css'],
 	directives: [ROUTER_DIRECTIVES],
 	providers: [
 		ROUTER_PROVIDERS,
@@ -26,13 +28,18 @@ import { DashboardComponent } from './dashboard.component';
     path: '/heroes',
     name: 'Heroes',
     component: HeroesComponent
-		},
-		{
-			path: '/dashboard',
-			name: 'Dashboard',
-			component: DashboardComponent,
-			useAsDefault: true
-		}
+	},
+	{
+		path: '/dashboard',
+		name: 'Dashboard',
+		component: DashboardComponent,
+		useAsDefault: true
+	},
+	{
+		path: '/detail/:id',
+		name: 'HeroDetail',
+		component: HeroDetailComponent
+	}
 ])
 export class AppComponent {
 	title = 'Tour of heroes';
